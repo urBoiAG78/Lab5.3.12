@@ -66,6 +66,7 @@ do
     {
         cout << myNumber << endl;
         cout << "--------------" << endl;
+        
     }
     else
     {
