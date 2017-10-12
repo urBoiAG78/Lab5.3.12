@@ -19,10 +19,13 @@ class FarmAnimal{
 public:
 FarmAnimal(double water_consumption); 
 double getWaterConsumption();
-// ...
+void setWaterConsumption(double water){
+    water = water_consumption;
+}
 private:
 double water_consumption;
 };
+
 FarmAnimal::FarmAnimal(double water_consumption) { 
     this->water_consumption = water_consumption;
 }
@@ -50,21 +53,30 @@ return total_consumption;
 
 void ConsumptionAccumulator::addConsumption(FarmAnimal animal) {
 total_consumption += animal.getWaterConsumption(); }
+
+class sheep: public FarmAnimal{
+public:
+    getWeight(double weight){
+        FarmAnimal::setWaterConsumption((weight / 10)*1.1);
+    }
+};
 int main() {
 ConsumptionAccumulator accumulator;
 // read user input
 // create appropriate objects and add them to the accumulator
 
-double myNumber = 0;
-string input;
+
+/**
+double weight = 0;
+string animal;
 double totalWater = 0;
 
 do 
 {
-    getline(cin,input);
-    if(1 == sscanf(input.c_str(), "Cow %lf", &myNumber))
+    getline(cin,weight);
+    if(1 == sscanf(animal.c_str(), "Cow %lf", &weight))
     {
-        cout << myNumber << endl;
+        cout << totalWater << endl;
         cout << "--------------" << endl;
         
     }
@@ -73,9 +85,9 @@ do
         cout << "No Match" << endl;
         cout << "-----------" << endl;
     }
-}while (input != "");
+}while (animal != "");
 
+cout << accumulator.getTotalConsumption(); return 0;**/
 
-cout << accumulator.getTotalConsumption(); return 0;
 }
 
