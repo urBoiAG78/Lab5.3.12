@@ -54,12 +54,25 @@ return total_consumption;
 void ConsumptionAccumulator::addConsumption(FarmAnimal animal) {
 total_consumption += animal.getWaterConsumption(); }
 
-class sheep: public FarmAnimal{
+class Sheep: public FarmAnimal{
 public:
     getWeight(double weight){
         FarmAnimal::setWaterConsumption((weight / 10)*1.1);
     }
 };
+class Cow: public FarmAnimal{
+public:
+    getWeight(double weight){
+        FarmAnimal::setWaterConsumption((weight / 100)*8.6);
+    }
+};
+class Horse: public FarmAnimal{
+public:
+    getWeight(double weight){
+        FarmAnimal::setWaterConsumption((weight / 100)*6.8);
+    }
+};
+
 int main() {
 ConsumptionAccumulator accumulator;
 // read user input
