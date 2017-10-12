@@ -17,41 +17,39 @@ using namespace std;
 
 class FarmAnimal{ 
 public:
-FarmAnimal(double water_consumption); 
-double getWaterConsumption();
-void setWaterConsumption(double water){water = water_consumption;}
+FarmAnimal(double water_consumption){
+    this->water_consumption = water_consumption;
+}; 
+double getWaterConsumption(){
+    return water_consumption;
+};
+void setWaterConsumption(double water){
+    water = water_consumption;
+}
 
 private:
 double water_consumption;
 };
 
-FarmAnimal::FarmAnimal(double water_consumption) { 
-    this->water_consumption = water_consumption;
-}
 
-double FarmAnimal::getWaterConsumption() { 
-    return water_consumption;
-}
+
 
 class ConsumptionAccumulator {
 public:
-    ConsumptionAccumulator();
-    double getTotalConsumption();
-    void addConsumption(FarmAnimal animal);
+    ConsumptionAccumulator(){
+        total_consumption(0)
+    };
+    double getTotalConsumption(){
+    return total_consumption;
+    };
+    void addConsumption(FarmAnimal animal){
+    total_consumption += animal.getWaterConsumption();
+    };
 private:
     double total_consumption;
 };
 
-ConsumptionAccumulator::ConsumptionAccumulator() : 
-total_consumption(0)
-{ 
-}
-double ConsumptionAccumulator::getTotalConsumption() {
-return total_consumption; 
-}
 
-void ConsumptionAccumulator::addConsumption(FarmAnimal animal) {
-total_consumption += animal.getWaterConsumption(); }
 
 class Sheep: public FarmAnimal{
 public:
