@@ -19,9 +19,8 @@ class FarmAnimal{
 public:
 FarmAnimal(double water_consumption); 
 double getWaterConsumption();
-void setWaterConsumption(double water){
-    water = water_consumption;
-}
+void setWaterConsumption(double water){water = water_consumption;}
+
 private:
 double water_consumption;
 };
@@ -56,19 +55,19 @@ total_consumption += animal.getWaterConsumption(); }
 
 class Sheep: public FarmAnimal{
 public:
-    getWeight(double weight){
+    void getWeight(double weight){
         FarmAnimal::setWaterConsumption((weight / 10)*1.1);
     }
 };
 class Cow: public FarmAnimal{
 public:
-    getWeight(double weight){
+    void getWeight(double weight){
         FarmAnimal::setWaterConsumption((weight / 100)*8.6);
     }
 };
 class Horse: public FarmAnimal{
 public:
-    getWeight(double weight){
+    void getWeight(double weight){
         FarmAnimal::setWaterConsumption((weight / 100)*6.8);
     }
 };
@@ -98,9 +97,9 @@ do
         cout << "No Match" << endl;
         cout << "-----------" << endl;
     }
-}while (animal != "");
+}while (animal != "");**/
 
-cout << accumulator.getTotalConsumption(); return 0;**/
+cout << accumulator.getTotalConsumption(); return 0;
 
 }
 
