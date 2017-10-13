@@ -89,6 +89,13 @@ do
         cout << "Added" << endl;
         cout << "--------------" << endl;
     }
+    else if(1 == sscanf(animal.c_str(), "cow %lf", &weight))
+    {
+        Cow cow(weight);
+        accumulator.addConsumption(cow);
+        cout << "Added" << endl;
+        cout << "--------------" << endl;
+    }
     else if(1 == sscanf(animal.c_str(), "Horse %lf", &weight))
     {
         Horse horse(weight);
@@ -96,7 +103,21 @@ do
         cout << "Added" << endl;
         cout << "--------------" << endl;
     }
+    else if(1 == sscanf(animal.c_str(), "horse %lf", &weight))
+    {
+        Horse horse(weight);
+        accumulator.addConsumption(horse);
+        cout << "Added" << endl;
+        cout << "--------------" << endl;
+    }
     else if(1 == sscanf(animal.c_str(), "Sheep %lf", &weight))
+    {
+        Sheep sheep(weight);
+        accumulator.addConsumption(sheep);
+        cout << "Added" << endl;
+        cout << "--------------" << endl;
+    }
+    else if(1 == sscanf(animal.c_str(), "sheep %lf", &weight))
     {
         Sheep sheep(weight);
         accumulator.addConsumption(sheep);
