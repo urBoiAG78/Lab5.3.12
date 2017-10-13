@@ -89,6 +89,20 @@ do
         cout << "--------------" << endl;
         
     }
+    else if(1 == sscanf(animal.c_str(), "Horse %lf", &weight))
+    {
+        Horse horse(weight);
+        accumulator.addConsumption(horse);
+        cout << "--------------" << endl;
+        
+    }
+    else if(1 == sscanf(animal.c_str(), "Sheep %lf", &weight))
+    {
+        Sheep sheep(weight);
+        accumulator.addConsumption(sheep);
+        cout << "--------------" << endl;
+        
+    }
     else
     {
         cout << "No Match" << endl;
