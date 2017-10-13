@@ -12,12 +12,14 @@
  */
 #include <iostream> 
 #include <stdio.h>
+#include <string>
 
 using namespace std;
 
 class FarmAnimal{ 
 public:
-FarmAnimal(double water_consumption){
+    FarmAnimal(){}
+    FarmAnimal(double water_consumption){
     this->water_consumption = water_consumption;
 }; 
 double getWaterConsumption(){
@@ -31,14 +33,10 @@ private:
 double water_consumption;
 };
 
-
-
-
 class ConsumptionAccumulator {
 public:
-    ConsumptionAccumulator(){
-        total_consumption(0)
-    };
+    ConsumptionAccumulator() : total_consumption(0){}
+    ;
     double getTotalConsumption(){
     return total_consumption;
     };
@@ -46,26 +44,26 @@ public:
     total_consumption += animal.getWaterConsumption();
     };
 private:
-    double total_consumption;
+    double total_consumption = 0;
 };
 
 
 
 class Sheep: public FarmAnimal{
 public:
-    void getWeight(double weight){
+    Sheep(double weight){
         FarmAnimal::setWaterConsumption((weight / 10)*1.1);
     }
 };
 class Cow: public FarmAnimal{
 public:
-    void getWeight(double weight){
+    Cow(double weight){
         FarmAnimal::setWaterConsumption((weight / 100)*8.6);
     }
 };
 class Horse: public FarmAnimal{
 public:
-    void getWeight(double weight){
+    Horse(double weight){
         FarmAnimal::setWaterConsumption((weight / 100)*6.8);
     }
 };
@@ -76,7 +74,7 @@ ConsumptionAccumulator accumulator;
 // create appropriate objects and add them to the accumulator
 
 
-/**
+
 double weight = 0;
 string animal;
 double totalWater = 0;
@@ -86,7 +84,7 @@ do
     getline(cin,weight);
     if(1 == sscanf(animal.c_str(), "Cow %lf", &weight))
     {
-        cout << totalWater << endl;
+        cout << weight << endl;
         cout << "--------------" << endl;
         
     }
@@ -95,7 +93,7 @@ do
         cout << "No Match" << endl;
         cout << "-----------" << endl;
     }
-}while (animal != "");**/
+}while (animal != "");
 
 cout << accumulator.getTotalConsumption(); return 0;
 
