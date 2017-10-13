@@ -26,7 +26,7 @@ double getWaterConsumption(){
     return water_consumption;
 };
 void setWaterConsumption(double water){
-    water = water_consumption;
+   water_consumption = water;
 }
 
 private:
@@ -44,7 +44,7 @@ public:
     total_consumption += animal.getWaterConsumption();
     };
 private:
-    double total_consumption = 0;
+    double total_consumption;
 };
 
 
@@ -75,7 +75,7 @@ ConsumptionAccumulator accumulator;
 
 
 
-double weight = 0;
+double weight;
 string animal;
 cout << "Type either Cow, Horse, Sheep and the weight of the animal to determind the water needed." << endl;
 
@@ -105,7 +105,7 @@ do
     }
     else
     {
-        cout << "No Match" << endl;
+        cout << "Please type Cow, Sheep, or Horse. Thank you" << endl;
         cout << "-----------" << endl;
     }
 }while (animal != "");
