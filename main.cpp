@@ -77,14 +77,15 @@ ConsumptionAccumulator accumulator;
 
 double weight = 0;
 string animal;
-double totalWater = 0;
+
 
 do 
 {
-    getline(cin,weight);
+    getline(cin,animal);
     if(1 == sscanf(animal.c_str(), "Cow %lf", &weight))
     {
-        cout << weight << endl;
+        Cow cow(weight);
+        accumulator.addConsumption(cow);
         cout << "--------------" << endl;
         
     }
